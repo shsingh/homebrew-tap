@@ -1,9 +1,9 @@
 class Pqscan < Formula
   desc "TLS / QUIC cipher-configuration and post-quantum readiness scanner"
   homepage "https://github.com/shsingh/pqscan"
-  version "2026.01-rc1"
-  url "https://github.com/shsingh/pqscan/releases/download/2026.01-rc1/pqscan-darwin-arm64"
-  sha256 "db965d0f4f39700d870571ad7492abe4d379ff69454a3e061031e6416a66e473"
+  version "2026.01-rc2"
+  url "https://github.com/shsingh/pqscan/releases/download/2026.01-rc2/pqscan-darwin-arm64"
+  sha256 "955980fc934baad678783361856fc6d77b97b3b536443870e3d5aebf28c3937f"
 
   def caveats
     <<~EOS
@@ -17,6 +17,6 @@ class Pqscan < Formula
   end
 
   test do
-    assert_match "2026.01-rc1", shell_output("#{bin}/pqscan -version")
+    assert_match "2026.01-rc2", shell_output("#{bin}/pqscan -version")
   end
 end
