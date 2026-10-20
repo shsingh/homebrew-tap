@@ -1,0 +1,20 @@
+# See https://pre-commit.com for more information
+# pre-commit.ci runs this on every PR; install the app for this repo first
+default_stages: [pre-commit]
+ci:
+  autofix_prs: true
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: '.*\.(pem|crt|key)$'   # never rewrite cert/key material
+      - id: end-of-file-fixer
+        exclude: '.*\.(pem|crt|key)$'
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: check-yaml
+        args: [--allow-multiple-documents]
+      - id: check-json
+      - id: check-added-large-files
+      - id: detect-private-key
