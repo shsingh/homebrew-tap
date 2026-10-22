@@ -1,14 +1,14 @@
 class Pqscan < Formula
   desc "TLS / QUIC cipher-configuration and post-quantum readiness scanner"
   homepage "https://github.com/shsingh/pqscan"
-  version "2026.01-rc3"
-  url "https://github.com/shsingh/pqscan/releases/download/2026.01-rc3/pqscan-darwin-arm64"
-  sha256 "255d81f378929b07c45d0e400bf88784a1918021e956f88326c6e67eee41ef42"
+  version "2026.01"
+  url "https://github.com/shsingh/pqscan/releases/download/2026.01/pqscan-darwin-arm64"
+  sha256 "532bc5f660e114b92a00dcda3e624d3c45f7686c5dd5f4507e0d9a7741711117"
 
   def caveats
     <<~EOS
-      2026.01-rc3 is a release candidate (rc-style names track the
-      YYYY.01 progress cuts). Verify provenance: gh attestation verify.
+      2026.01 is the general-availability release. Verify provenance:
+      gh attestation verify.
     EOS
   end
 
@@ -17,6 +17,6 @@ class Pqscan < Formula
   end
 
   test do
-    assert_match "2026.01-rc3", shell_output("#{bin}/pqscan -version")
+    assert_match "2026.01", shell_output("#{bin}/pqscan -version")
   end
 end
